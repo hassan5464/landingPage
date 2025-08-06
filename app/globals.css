@@ -1,6 +1,25 @@
 @import "tailwindcss";
 
+*,::after,::before{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 
 
+@theme {
+  --primary-color: #224ECB;
+}
 
+
+/* @layer components{
+  .container {
+    @apply max-w-screen-xl mx-auto my-0 py-0 px-
+  }
+} */
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}

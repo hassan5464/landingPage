@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const [openNav, setOpenNav] = useState("");
 
   return (
     <nav className="bg-(--primary-color) z-99  top-0 right-0 left-0 fixed h-[105px]">
@@ -27,7 +27,8 @@ const Navbar = () => {
               <li>
                 <Link href={"/"}>Home</Link>
               </li>
-              <li className="relative">
+              <li className="relative" 
+              onClick={() => (openNav ?setOpenNav("") : setOpenNav("service"))}>
                 <Link href={"/"}>
                   <div className="flex items-center gap-2">
                     Services
@@ -41,7 +42,8 @@ const Navbar = () => {
                     </span>
                   </div>
                 </Link>
-                {/* <div className="absolute w-[680px] h-[242px] top-[68px] -left-26 bg-gray-400 *:text-black transition delay-100">
+
+                { openNav === "service" ? <div className="absolute w-[680px] h-[242px] top-[68px] -left-26 bg-white *:text-black transition delay-100">
                   <div className="flex flex-col gap-8 w-fit" style={{padding: "24px"}}> 
                     <span className=" absolute left-[144px] -top-14 border-28  border-r-transparent border-t-transparent border-l-transparent border-b-white"></span>
                     <Link href="/" className="hover:text-(--primary-color) hover:border-b hover:border-b-(--primary-color)">UX/UI Design</Link>
@@ -49,9 +51,10 @@ const Navbar = () => {
                     <Link href="/" className="hover:text-(--primary-color) hover:border-b hover:border-b-(--primary-color)">Graphic Design</Link>
                     <Link href="/" className="hover:text-(--primary-color) hover:border-b hover:border-b-(--primary-color)">App Development</Link>
                   </div>
-                </div> */}
+                </div>: "" }
               </li>
-              <li  className="relative">
+              <li  className="relative" 
+              onClick={() => (openNav ?setOpenNav("") : setOpenNav("product"))}>
                 <Link href={"/"}>
                   <div className="flex items-center gap-2">
                     Products
@@ -65,7 +68,8 @@ const Navbar = () => {
                     </span>
                   </div>
                 </Link>
-                <div className="absolute w-[680px] h-[162px] top-[68px] -left-26 bg-gray-400 *:text-black transition delay-100">
+                {openNav === "product" ? 
+                <div className="absolute w-[680px] h-[162px] top-[68px] -left-26 bg-white *:text-black transition delay-100">
                   <div
                     className="flex flex-col gap-8 w-fit"
                     style={{ padding: "24px" }}
@@ -85,6 +89,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                 </div>
+                : ""}
               </li>
               <li>
                 <Link href={"/"}>Projects</Link>
@@ -96,7 +101,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="hidden lg:flex items-center justify-between gap-4 *:text-white">
-          <div className="flex items-center gap-2 ">
+          <button className="flex items-center gap-2 cursor-pointer">
             <span>EN</span>
             <Image
               src="./global.svg"
@@ -104,11 +109,16 @@ const Navbar = () => {
               width={24}
               height={24}
             />
-          </div>
-          <button className="w-[165px] h-[52px] border border-white rounded-[50px] px-[24] py-[32px]">
+          </button>
+          <button className="w-[165px] h-[52px] border cursor-pointer border-white rounded-[50px] ">
             Contanct Us
           </button>
         </div>
+
+
+
+
+                         {/* Mobil button menu */}
         <div className="flex  items-center lg:hidden ">
           <button
             type="button"
@@ -124,7 +134,7 @@ const Navbar = () => {
 
             {isOpen ? (
               <svg
-                className="size-[40px]"
+                className="size-[40px] text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -139,35 +149,50 @@ const Navbar = () => {
                 />
               </svg>
             ) : (
-              <Image src="./Sort.svg" alt="sort icon" width={40} height={40} />
+              <svg
+                    className="size-[40px] text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    />
+                  </svg>
             )}
           </button>
         </div>
-
+               {/* Mobil Nav */}
         <div
           className={` ${isOpen ? "" : "hidden"}
-              absolute top-32 py-4  z-20 w-1/5  right-2  rounded-lg mr-2 `}
+              absolute top-30 py-4  z-20 w-1/3  right-2  rounded-lg mr-2 `}
           id="navbar-sticky"
         >
-          <div className="flex flex-col relative items-center p-6 md:p-0 mt-4 font-medium  rounded-lg   bg-(--primary-color)">
-            <span className=" absolute right-10 -top-4 border-8  border-r-transparent border-t-transparent border-l-transparent"></span>
-            <div className="">
-              <ul className="ml-2 flex flex-col gap-1 md:gap-0 justify-center itmes-center  *:text-[18px]">
-                <li>
+          <div className="relative  font-medium  rounded-lg   bg-(--primary-color)" >
+            <span className=" absolute right-8 -top-9 border-18   border-r-transparent border-t-transparent border-l-transparent"></span>
+            <div className="" >
+              <ul className=" flex flex-col  justify-center items-start *:text-[18px]">
+                <li className="">
                   <Link
                     href="#"
-                    className="block py-2 px-3  text-white   rounded-sm hover:bg-black "
+                    className="block py-2 px-3  text-white text-center  rounded-sm hover:bg-black "
                     aria-current="page"
                   >
                     Home
                   </Link>
                 </li>
                 <li
-                  onClick={() => (toggle ? setToggle(false) : setToggle(true))}
+                  onClick={() => (openNav ?setOpenNav("") : setOpenNav("service"))}
+                  className="transition delay-200"
                 >
                   <Link
                     href="#"
-                    className="block py-2 px-3  text-white  rounded-sm hover:bg-black   "
+                    className="block py-2 px-3  text-white text-center rounded-sm hover:bg-black   "
                   >
                     <div className="flex items-center gap-2">
                       Services
@@ -183,14 +208,25 @@ const Navbar = () => {
                   </Link>
                 </li>
                 {/* //////////////////////// */}
-                {/* {
-                  toggle && <div className=" *:text-black ">
-                  <li>
+                {
+                  openNav === "service" ? <div className=" *:text-black ml-3 ">
+                  <li  >
                   <Link
                     href="#"
                     className="block py-2 px-3  rounded-sm  "
                   >
-                    Projects
+                    UX/UI Design
+
+
+
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="block py-2 px-3   "
+                  >
+                    Graphic Design
                   </Link>
                 </li>
                 <li>
@@ -198,16 +234,25 @@ const Navbar = () => {
                     href="#"
                     className="block py-2 px-3  rounded-sm  "
                   >
-                    About Us
+                    Web development
                   </Link>
                 </li>
-                  </div>
-                } */}
                 <li>
                   <Link
                     href="#"
-                    className="block py-2 px-3  text-white  rounded-sm hover:bg-black   "
-                    // onClick={setToggle(true)}
+                    className="block py-2 px-3   "
+                  >
+                    App Development
+                  </Link>
+                </li>
+                
+                  </div> :""
+                }
+                <li>
+                  <Link
+                    href="#"
+                    className="block px-3 py-3 text-white text-center rounded-sm hover:bg-black   "
+                    onClick={() => (openNav ?setOpenNav(""): setOpenNav("product"))}
                   >
                     <div className="flex items-center gap-2">
                       Products
@@ -222,18 +267,44 @@ const Navbar = () => {
                     </div>
                   </Link>
                 </li>
-                <li>
+                 {
+                  openNav === "product" ? <div className=" *:text-black ml-3">
+                  <li>
                   <Link
                     href="#"
-                    className="block py-2 px-3  text-white rounded-sm  hover:bg-black     "
+                    className="block py-2 px-3  rounded-sm  "
                   >
-                    Projects
+                    E-commerce
+
+
+
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="#"
-                    className="block py-2 px-3  text-white rounded-sm  hover:bg-black "
+                    className="block py-2 px-3  rounded-sm  "
+                  >
+                    LMS
+                  </Link>
+                </li>
+                
+                
+                
+                  </div>: " "
+                }
+                <li className="" >
+                  <Link
+                    href="#"
+                    className="block py-2 px-3 text-center  text-white rounded-sm  hover:bg-black     "
+                  >
+                    Projects
+                  </Link>
+                </li>
+                <li className=" " >
+                  <Link
+                    href="#"
+                    className="block py-2 px-3 text-center text-white rounded-sm  hover:bg-black "
                   >
                     About Us
                   </Link>

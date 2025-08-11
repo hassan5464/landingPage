@@ -9,7 +9,7 @@ const Navbar = () => {
   const [openNav, setOpenNav] = useState("");
 
   return (
-    <nav className="bg-(--primary-color) z-99  top-0 right-0 left-0 fixed h-[105px]">
+    <nav className="bg-(--primary-color) z-99 w-full sticky h-[105px] top-0 bottom-[105px] left-0 right-0">
       <div className="container flex items-center justify-between  ">
         <div className="flex items-center justify-between gap-32">
           <div>
@@ -69,7 +69,7 @@ const Navbar = () => {
                   </div>
                 </Link>
                 {openNav === "product" ? 
-                <div className="absolute w-[680px] h-[162px] top-[68px] -left-26 bg-white *:text-black transition delay-100">
+                <div className="absolute w-[680px] h-[142px] top-[68px] -left-26 bg-white *:text-black transition delay-100">
                   <div
                     className="flex flex-col gap-8 w-fit"
                     style={{ padding: "24px" }}

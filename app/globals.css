@@ -4,12 +4,20 @@
   box-sizing: border-box;
 }
 
-
+body{
+  font-family: var(--font-jakarta);
+  scroll-behavior: smooth;
+}
 
 @theme {
   --primary-color: #224ECB;
 }
-
+@utility flex-center {
+    @apply flex justify-center items-center;
+}
+@utility white{
+  @apply text-white;
+}
 
 /* @layer components{
   .container {

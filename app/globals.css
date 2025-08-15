@@ -11,6 +11,7 @@ body{
 
 @theme {
   --primary-color: #224ECB;
+  --paragraph-color: #000C1F80;
 }
 @utility flex-center {
     @apply flex justify-center items-center;
@@ -29,3 +30,14 @@ body{
   margin: 0 auto;
   padding: 0 40px;
 }
+
+.header-bg {
+  background-color: var(--primary-color);
+  background-image: 
+    url('../public/gridImage.png'), 
+    url('../public/Midjourney.png');
+  background-size: cover, cover;        /* Each image size */
+  background-position: center, center;  /* Each image position */
+  background-repeat: no-repeat, no-repeat;
+}
+

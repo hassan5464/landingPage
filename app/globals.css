@@ -36,8 +36,8 @@ body{
   background-image: 
     url('../public/gridImage.png'), 
     url('../public/Midjourney.png');
-  background-size: cover, cover;        /* Each image size */
-  background-position: center, center;  /* Each image position */
+  background-size: cover, cover;       
+  background-position: center, center; 
   background-repeat: no-repeat, no-repeat;
 }
 

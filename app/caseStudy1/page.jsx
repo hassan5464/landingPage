@@ -18,7 +18,7 @@ export default function CaseStudyOne() {
     <>
       <header className="header-bg">
         <div className=" container mx-auto h-[712px] w-full flex justify-around ">
-          {/* right section */}
+          {/* left section */}
           <div className="text-white flex flex-col gap-6 items-start pt-4 pr-2 justify-center max-w-xl">
             <h1 className="font-bold text-6xl leading-20">
               Software development case studies
@@ -39,7 +39,7 @@ export default function CaseStudyOne() {
             </button>
           </div>
 
-          {/* left section */}
+          {/* right section */}
           <div className="flex justify-center items-center">
             <Image
               src={worker}
@@ -54,7 +54,7 @@ export default function CaseStudyOne() {
 
       <main className="container mx-auto mt-12">
         <div className="w-[820px] mt-14">
-          <div className="flex flex-col   mb-10">
+          <div className="flex flex-col mb-10">
             <h2 className="text-6xl font-bold leading-20 mb-5">
               All software development case studies
             </h2>

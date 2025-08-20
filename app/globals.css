@@ -11,6 +11,10 @@ body{
 
 @theme {
   --primary-color: #224ECB;
+  --paragraph-color: #000C1F80;
+  --sub-color: #E3E3E2;
+  --semi-white-color: rgba(255, 255, 255, 0.7);
+
 }
 @utility flex-center {
     @apply flex justify-center items-center;
@@ -29,3 +33,40 @@ body{
   margin: 0 auto;
   padding: 0 40px;
 }
+
+.header-bg {
+  background-color: var(--primary-color);
+  background-image: 
+    url('../public/gridImage.png'), 
+    url('../public/Midjourney.png');
+  background-size: cover, cover;       
+  background-position: center, center; 
+  background-repeat: no-repeat, no-repeat;
+}
+.header-bg-two {
+  background-color: var(--sub-color);
+  background-image: 
+    url('../public/gridImage.png'), 
+    url('../public/image.png');
+  background-size: cover, cover;       
+  background-position: center, center; 
+  background-repeat: no-repeat, no-repeat;
+}
+
+.third-section-left{
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('../public/diverImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} 
+
+.common-bg {
+  background-image: url("../public/diverImage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+

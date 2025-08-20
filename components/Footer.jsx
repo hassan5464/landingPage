@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { Camera, MoveUp } from "lucide-react";
+import { MoveUp } from "lucide-react";
+import Button from "./Button";
 
 const Footer = () => {
   const scrollTop = ()=>{
@@ -26,20 +27,7 @@ const Footer = () => {
             <br />
             know about your requirements. We’ll be glad to help!
           </p>
-          <button
-            type="button"
-            className="bg-white mb-14 w-[264px] h-[64px] cursor-pointer  flex justify-between items-center px-2 rounded-[192px] "
-          >
-            <p className="text-(--primary-color) font-bold text-[20px] pl-2.5">
-              Request a service
-            </p>
-            <Image
-              src="./Frame2.svg"
-              width="52"
-              height={52}
-              alt="right cursor"
-            />
-          </button>
+          <Button />
         </div>
         <div className="flex flex-col lg:flex-row gap-4 items-center justify-between mt-10">
           <ul className="flex items-center justify-between gap-4">

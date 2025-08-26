@@ -82,7 +82,7 @@ const Navbar = () => {
                       E-commerce
                     </Link>
                     <Link
-                      href="/"
+                      href="/product/lms"
                       className="hover:text-(--primary-color) hover:border-b hover:border-b-(--primary-color)"
                     >
                       LMS

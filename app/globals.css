@@ -13,6 +13,8 @@ body{
   --primary-color: #224ECB;
   --paragraph-color: #000C1F80;
   --sub-color: #E3E3E2;
+  --custom-gray-color:#000C1F80;
+  --light-babyBlue-color:#224ECB1A;
   --semi-white-color: rgba(255, 255, 255, 0.7);
 
 }
@@ -47,7 +49,7 @@ body{
   background-color: var(--sub-color);
   background-image: 
     url('../public/gridImage.png'), 
-    url('../public/image.png');
+    url('../public/image2.png');
   background-size: cover, cover;       
   background-position: center, center; 
   background-repeat: no-repeat, no-repeat;
